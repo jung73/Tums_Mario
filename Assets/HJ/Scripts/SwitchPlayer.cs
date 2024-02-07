@@ -7,7 +7,7 @@ public class SwitchPlayer : MonoBehaviour
     public GameObject marioPrefab; // 마리오 프리팹
     public GameObject catmarioPrefab; // 고양이마리오 
 
-    public GameObject currentCharacter = null; // 현재 캐릭터
+    public GameObject currentCharacter; // 현재 캐릭터
 
     public Follow follow;
 
@@ -15,7 +15,9 @@ public class SwitchPlayer : MonoBehaviour
 
     private void Start()
     {
-        
+        follow = Camera.main.GetComponent<Follow>();
+        currentCharacter = GameObject.Find("Mario");
+
     }
 
 

@@ -163,7 +163,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &3854724104218259493
 SphereCollider:
@@ -180,7 +180,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -212,5 +212,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   marioPrefab: {fileID: 3836644466278509083, guid: 2fb2fb7b68bbc45459ccfd63cb2069ca, type: 3}
   catmarioPrefab: {fileID: 3836644466278509083, guid: 7b837f77d08f9d64896a43949a143a1c, type: 3}
-  currentCharacter: {fileID: 0}
+  currentCharacter: {fileID: 4276127449535446852, guid: f2d0ecbff44875049ad788517acec958, type: 3}
   follow: {fileID: 0}

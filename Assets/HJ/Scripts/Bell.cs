@@ -17,9 +17,9 @@ public class Bell : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider collider) //벨을 먹으면... 
+    private void OnCollisionEnter(Collision collision) //벨을 먹으면... 
     {
-        if (collider.gameObject.tag == "Mario") //마리오와 부딪히면
+        if (collision.gameObject.tag == "Mario") //마리오와 부딪히면
         {
             Debug.Log("벨 부딪");
 

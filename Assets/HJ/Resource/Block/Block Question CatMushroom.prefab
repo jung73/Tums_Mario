@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 4c4e24925d151a244adfd53a84c30135, type: 3}
       propertyPath: m_Name
-      value: Block Question
+      value: Block Question CatMushroom
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4c4e24925d151a244adfd53a84c30135, type: 3}
       propertyPath: m_TagString
@@ -138,7 +138,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 4c4e24925d151a244adfd53a84c30135, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6325488986005585054}
+      addedObject: {fileID: 4136360632675366117}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 4c4e24925d151a244adfd53a84c30135, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6300790787170240}
@@ -151,7 +151,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4c4e24925d151a244adfd53a84c30135, type: 3}
   m_PrefabInstance: {fileID: 1392419039428697874}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6325488986005585054
+--- !u!114 &4136360632675366117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,10 +160,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1392419039428663730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 503954390c4e35244b8583b37da11ed3, type: 3}
+  m_Script: {fileID: 11500000, guid: b2fa4901a3a6e024ebb249c4f049ca70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab_BlockEmpty: {fileID: 3897707152203067051, guid: ee0695281cab9f04c8ef7cf1dc6afebd, type: 3}
+  prefab_CatMushroom: {fileID: 5186692646734722939, guid: daa54fd7d307b37428103924de5e183e, type: 3}
 --- !u!54 &6300790787170240
 Rigidbody:
   m_ObjectHideFlags: 0
