@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     //움직임
     void Move()
     {
-        moveVec = new Vector3(hAxis, 0, vAxis).normalized;
+        /*moveVec = new Vector3(hAxis, 0, vAxis).normalized;
 
         transform.position += moveVec * speed * Time.deltaTime;
 
@@ -60,7 +60,21 @@ public class Player : MonoBehaviour
         if (wDown == true)
         {
             speed = 7;
-        }
+        }*/
+        
+
+        moveVec = new Vector3(hAxis, 0, vAxis).normalized;
+
+        //if (isJump)
+            
+
+        Vector3 newPos = transform.position + moveVec * speed * Time.deltaTime;
+
+        rigid.MovePosition(newPos);
+
+        anim.SetBool("isRun", moveVec != Vector3.zero);
+        anim.SetBool("isWalk", wDown);
+        speed = wDown ? 7 : 15;
     }
 
     void Turn() //회전

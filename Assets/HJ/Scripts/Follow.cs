@@ -9,10 +9,12 @@ public class Follow : MonoBehaviour
     public Transform target;
     public Vector3 offset;
     public bool isSwitch = false;
+    public Vector3 initialPosition;
     // Start is called before the first frame update
     void Start()
     {
         FindAndTarget(); //시작할 때 타겟 한번 찾음
+        transform.position = initialPosition;
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class Follow : MonoBehaviour
         }
         else if (target != null && target.transform != null)
         {
-            transform.position = target.position + offset;
+            transform.position = new Vector3(target.position.x + offset.x, transform.position.y, target.position.z + offset.z);
         }
     }
 
