@@ -28,7 +28,8 @@ public class QBlockCatMush : MonoBehaviour
                   transform.position, transform.rotation);
             Destroy(gameObject);
             Vector3 newPosition = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
-            GameObject NewCatMushroom = Instantiate(prefab_CatMushroom, newPosition, transform.rotation);
+            Quaternion newRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
+            GameObject NewCatMushroom = Instantiate(prefab_CatMushroom, newPosition, newRotation);
 
             NewCatMushroom.AddComponent<MoveObject>();
 

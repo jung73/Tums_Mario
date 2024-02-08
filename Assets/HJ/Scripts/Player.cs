@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     Animator anim;
     Rigidbody rigid;
 
-    public static int health = 3;
+    public int health = 3;
 
     public static int coin = 0;
     
@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
         Move();
         Turn();
         Jump();
-        Die();
     }
 
     void GetInput()
@@ -79,7 +78,10 @@ public class Player : MonoBehaviour
 
     void Turn() //회전
     {
-        transform.LookAt(transform.position + moveVec);
+        if (moveVec != Vector3.zero) // moveVec이 0이 아닐 때만 회전
+        {
+            transform.LookAt(transform.position + moveVec);
+        }
     }
 
     //점프
@@ -112,19 +114,23 @@ public class Player : MonoBehaviour
     }
 
     //사망 
-    private void Die()
+    public void Die()
     {
         if (health == 0)
         {
-            //사망
+            Debug.Log("Player is dead.");
         }
     }
 
     //맞음 
-    public static void Hit()
+    public void Hit()
     {
         health--;
         Debug.Log($"health: {health}");
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
 }

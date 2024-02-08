@@ -26,7 +26,7 @@ public class RedMushroom : MonoBehaviour
 
             if (player != null)
             {
-                player.transform.localScale = new Vector3(2f, 2f, 2f);
+                player.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
             }
             else
             {
@@ -34,7 +34,7 @@ public class RedMushroom : MonoBehaviour
                 GameObject newPlayer = GameObject.FindGameObjectWithTag("Mario");
                 if (newPlayer != null)
                 {
-                    newPlayer.transform.localScale = new Vector3(2f, 2f, 2f);
+                    newPlayer.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
                 }
                 else
                 {

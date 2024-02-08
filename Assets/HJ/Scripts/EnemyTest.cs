@@ -43,11 +43,12 @@ using UnityEngine;
 public class EnemyTest : MonoBehaviour
 {
     public GameObject player;
+    public Player player1;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player1 = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -62,8 +63,8 @@ public class EnemyTest : MonoBehaviour
             Debug.Log("부딪");
 
 
-            
-            Player.Hit(); //맞음
+
+            player1.Hit(); //맞음
             
             
         }
