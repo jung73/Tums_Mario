@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Goomba
+  - Floor
+  - QBlock
+  - Mario
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Post Layer
   - Water
   - UI
   - 
