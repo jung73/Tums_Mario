@@ -5,11 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 15;
+    public float jumpForce = 15;
     float hAxis;
     float vAxis;
     bool wDown;
     bool jDown;
     bool isJump;
+    public Transform tf;
 
     Vector3 moveVec;
 
@@ -26,7 +28,9 @@ public class Player : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody>();
-        
+        tf = GetComponent<Transform>();
+
+
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class Player : MonoBehaviour
         Move();
         Turn();
         Jump();
+        ClimbWall();
     }
 
     void GetInput()
@@ -89,7 +94,7 @@ public class Player : MonoBehaviour
     {
         if (jDown && !isJump)
         {
-            rigid.AddForce(Vector3.up * 15, ForceMode.Impulse);
+            rigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             anim.SetBool("isJump", true);
             anim.SetTrigger("doJump");
             isJump = true;
@@ -131,6 +136,45 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+        tf.localScale = new Vector3(1.2f, 1f, 1.2f);
     }
+
+    void ClimbWall()
+    {
+        // 플레이어가 특정 방향으로 이동하고 있는지 확인
+        if (moveVec.magnitude > 0)
+        {
+            // 플레이어 바로 앞 방향으로 레이캐스트 발사
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
+            {
+                // 레이캐스트에 벽이 맞으면 해당 벽을 오를 수 있게 함
+                if (hit.collider.CompareTag("Wall"))
+                {
+                    float distanceToWall = hit.distance;
+
+                    // 일정한 반경 안에 들어왔을 때만 높은 점프 트리거 호출
+                    if (distanceToWall < 10f)
+                    {
+                        // 높은 점프 트리거 호출
+                        jumpForce = 30f;
+                    }
+                    else jumpForce = 15f;
+                }
+            }
+            else jumpForce = 15f;
+            /*else
+            {
+                // 레이캐스트가 벽에 닿지 않은 상태에서도 일정한 반경 안에 들어왔을 때만 높은 점프 트리거 호출
+                if (Vector3.Distance(transform.position, hit.point) < 10f)
+                {
+                    // 높은 점프 트리거 호출
+                    jumpForce = 25f;
+                }
+                else jumpForce = 30f;
+            }*/
+        }
+    }
+    
 
 }
