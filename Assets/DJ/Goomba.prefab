@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 7cad6d3375c630840b43073a105c8e1e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4b79da72d244e28478393e9a7415a08f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -219,9 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d76290ee231c84b9781f74d90c56e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 2
   rotationSpeed: 15
-  detectionRadius: 30
+  detectionRadius: 10
   player: {fileID: 0}
 --- !u!54 &5798878938970909638
 Rigidbody:
@@ -248,7 +252,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!136 &7042450427061696279
 CapsuleCollider:

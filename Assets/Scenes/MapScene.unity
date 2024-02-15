@@ -10752,6 +10752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mario
       objectReference: {fileID: 0}
+    - target: {fileID: 4276127449535446852, guid: f2d0ecbff44875049ad788517acec958, type: 3}
+      propertyPath: m_TagString
+      value: Mario
+      objectReference: {fileID: 0}
     - target: {fileID: 7167060553418214971, guid: f2d0ecbff44875049ad788517acec958, type: 3}
       propertyPath: m_Mass
       value: 1
