@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public int health = 3;
 
     public static int coin = 0;
+
+    public AudioSource jumpadio;
     
 
     // Start is called before the first frame update
@@ -98,6 +100,7 @@ public class Player : MonoBehaviour
             anim.SetBool("isJump", true);
             anim.SetTrigger("doJump");
             isJump = true;
+            jumpadio.Play();
         }
     }
 

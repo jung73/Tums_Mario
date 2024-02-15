@@ -7,7 +7,10 @@ public class START : MonoBehaviour
 {
     public Button startButton; // 게임 시작 버튼
     public Button triggerButton; // 끝
-    public GameObject objectToTrigger; // 트리거할 오브젝트
+    public GameObject objectToTrigger; 
+    public AudioSource adioMain;
+    public AudioSource adioStop;
+
 
     private void Start()
     {
@@ -22,11 +25,13 @@ public class START : MonoBehaviour
     {
         ResumeGame(); // 게임 시작 시 정지 상태 해제
         startButton.gameObject.SetActive(false);
+        adioMain.Play();
     }
 
     void PauseGame()
     {
         Time.timeScale = 0f; // 게임 속도를 0으로 설정하여 정지
+        adioMain.Stop();
     }
 
     void ResumeGame()
@@ -38,7 +43,9 @@ public class START : MonoBehaviour
         if (other.CompareTag("Mario")) // 플레이어와 충돌했는지 확인
         {
             triggerButton.gameObject.SetActive(true); // 버튼 활성화
+            adioMain.Stop();
             PauseGame(); // 게임 정지
+            adioStop.Play();
         }
     }
 }
